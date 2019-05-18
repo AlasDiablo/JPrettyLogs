@@ -23,12 +23,12 @@ class CLILogger(private val isError: Boolean,
     override fun critical(msg: String) {
         if (isCritical) {
             val tmp = msg.split("\n")
-            val str1 = "${CLIAnsiColor.HIGH_INTENSITY}${CLIAnsiColor.ANSI_RED}    !!!    | ${tmp[0]}${CLIAnsiColor.ANSI_RESET}"
-            println(str1)
+            val str1 = "    !!!    | ${tmp[0]}"
+            println("${CLIAnsiColor.HIGH_INTENSITY}${CLIAnsiColor.ANSI_RED} $str1 ${CLIAnsiColor.ANSI_RESET}")
             loggerFileOut.println(str1)
             for (i in 1 until tmp.size step 1) {
-                val str2 = "${CLIAnsiColor.HIGH_INTENSITY}${CLIAnsiColor.ANSI_RED}           | ${tmp[i]}${CLIAnsiColor.ANSI_RESET}"
-                println(str2)
+                val str2 = "           | ${tmp[i]}"
+                println("${CLIAnsiColor.HIGH_INTENSITY}${CLIAnsiColor.ANSI_RED} $str2 ${CLIAnsiColor.ANSI_RESET}")
                 loggerFileOut.println(str2)
             }
         }
@@ -41,12 +41,12 @@ class CLILogger(private val isError: Boolean,
     override fun error(msg: String) {
         if (isError) {
             val tmp = msg.split("\n")
-            val str1 = "${CLIAnsiColor.LOW_INTESITY}${CLIAnsiColor.ANSI_RED}    [!]    | ${tmp[0]}${CLIAnsiColor.ANSI_RESET}"
-            println(str1)
+            val str1 = "    [!]    | ${tmp[0]}"
+            println("${CLIAnsiColor.LOW_INTESITY}${CLIAnsiColor.ANSI_RED} $str1 ${CLIAnsiColor.ANSI_RESET}")
             loggerFileOut.println(str1)
             for (i in 1 until tmp.size step 1) {
-                val str2 = "${CLIAnsiColor.LOW_INTESITY}${CLIAnsiColor.ANSI_RED}           | ${tmp[i]}${CLIAnsiColor.ANSI_RESET}"
-                println(str2)
+                val str2 = "           | ${tmp[i]}"
+                println("${CLIAnsiColor.LOW_INTESITY}${CLIAnsiColor.ANSI_RED} $str2 ${CLIAnsiColor.ANSI_RESET}")
                 loggerFileOut.println(str2)
             }
         }
@@ -58,12 +58,12 @@ class CLILogger(private val isError: Boolean,
     override fun info(msg: String) {
         if (isInfo) {
             val tmp = msg.split("\n")
-            val str1 = "${CLIAnsiColor.ANSI_GREEN}    [i]    | ${tmp[0]}${CLIAnsiColor.ANSI_RESET}"
-            println(str1)
+            val str1 = "    [i]    | ${tmp[0]}"
+            println("${CLIAnsiColor.ANSI_GREEN} $str1 ${CLIAnsiColor.ANSI_RESET}")
             loggerFileOut.println(str1)
             for (i in 1 until tmp.size step 1) {
-                val str2 = "${CLIAnsiColor.ANSI_GREEN}           | ${tmp[i]}${CLIAnsiColor.ANSI_RESET}"
-                println(str2)
+                val str2 = "           | ${tmp[i]}"
+                println("${CLIAnsiColor.ANSI_GREEN} $str2 ${CLIAnsiColor.ANSI_RESET}")
                 loggerFileOut.println(str2)
             }
         }
@@ -75,29 +75,29 @@ class CLILogger(private val isError: Boolean,
     override fun debug(msg: String) {
         if (isDebug) {
             val tmp = msg.split("\n")
-            val str1 = "${CLIAnsiColor.ANSI_BLUE}    ...    | ${tmp[0]}${CLIAnsiColor.ANSI_RESET}"
-            println(str1)
+            val str1 = "    ...    | ${tmp[0]}"
+            println("${CLIAnsiColor.ANSI_BLUE} $str1 ${CLIAnsiColor.ANSI_RESET}")
             loggerFileOut.println(str1)
             for (i in 1 until tmp.size step 1) {
-                val str2 = "${CLIAnsiColor.ANSI_BLUE}           | ${tmp[i]}${CLIAnsiColor.ANSI_RESET}"
-                println(str2)
+                val str2 = "           | ${tmp[i]}"
+                println("${CLIAnsiColor.ANSI_BLUE} $str2 ${CLIAnsiColor.ANSI_RESET}")
                 loggerFileOut.println(str2)
             }
         }
     }
-
+    
     /**
      *
      */
     override fun warning(msg: String) {
         if (isWarning) {
             val tmp = msg.split("\n")
-            val str1 = "${CLIAnsiColor.ANSI_YELLOW}    /!\\    | ${tmp[0]}${CLIAnsiColor.ANSI_RESET}"
-            println(str1)
+            val str1 = "    /!\\    | ${tmp[0]}"
+            println("${CLIAnsiColor.ANSI_YELLOW} $str1 ${CLIAnsiColor.ANSI_RESET}")
             loggerFileOut.println(str1)
             for (i in 1 until tmp.size step 1) {
-                val str2 = "${CLIAnsiColor.ANSI_YELLOW}           | ${tmp[i]}${CLIAnsiColor.ANSI_RESET}"
-                println(str2)
+                val str2 = "           | ${tmp[i]}"
+                println("${CLIAnsiColor.ANSI_YELLOW} $str2 ${CLIAnsiColor.ANSI_RESET}")
                 loggerFileOut.println(str2)
             }
         }

@@ -10,10 +10,12 @@ class LoggerFileOut(private val path: String) {
 
     fun print(str: String) {
         this.writer.write(str)
+        this.writer.flush()
     }
 
     fun println(str: String) {
         this.writer.write("$str\n")
+        this.writer.flush()
     }
 
 }
