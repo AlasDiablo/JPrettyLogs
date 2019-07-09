@@ -4,7 +4,7 @@ import fr.liotapsi.jprettylogs.JPrettyLogs;
 public class TestLoggerJava {
 
     public static void main(String[] args) {
-        ILogger myLogger = JPrettyLogs.Companion.cliLogger(args, "/tmp/");
+        ILogger myLogger = JPrettyLogs.Companion.cliLogger(args, "/tmp/", "testlog");
         myLogger.info("hello i'm info");
         myLogger.debug("hello i'm debug");
         myLogger.warning("hello i'm warning");

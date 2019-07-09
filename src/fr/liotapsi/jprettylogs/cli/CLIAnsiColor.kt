@@ -1,7 +1,7 @@
 package fr.liotapsi.jprettylogs.cli
 
 /**
- *
+ * list of some color
  */
 object CLIAnsiColor {
     val ANSI_RESET = "\u001B[0m"

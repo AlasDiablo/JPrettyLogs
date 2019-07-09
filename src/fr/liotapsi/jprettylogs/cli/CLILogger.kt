@@ -2,23 +2,32 @@ package fr.liotapsi.jprettylogs.cli
 
 import fr.liotapsi.jprettylogs.ILogger
 import fr.liotapsi.jprettylogs.io.LoggerFileOut
-import java.util.*
 
 /**
- *
+ * the main class for call and build the logger
  */
 class CLILogger(private val isError: Boolean,
                 private val isInfo: Boolean,
                 private val isDebug: Boolean,
                 private val isWarning: Boolean,
                 private val isCritical: Boolean,
-                path: String) : ILogger {
-
-    private val date = Date()
-    private val loggerFileOut = LoggerFileOut(path + "free-server-tools_" + this.date.toString() + ".log")
+                path: String?,
+                logName: String?) : ILogger {
 
     /**
-     *
+     * the file stream output
+     */
+    private val loggerFileOut: LoggerFileOut
+
+    init {
+        if (path != null)
+            this.loggerFileOut = LoggerFileOut("$path${logName}_this.date.toString().log".replace(" ", "_"), true)
+        else
+            loggerFileOut = LoggerFileOut(null, false)
+    }
+
+    /**
+     * print a log
      */
     override fun critical(msg: String) {
         if (isCritical) {
@@ -36,7 +45,7 @@ class CLILogger(private val isError: Boolean,
 
 
     /**
-     *
+     * print a log
      */
     override fun error(msg: String) {
         if (isError) {
@@ -53,7 +62,7 @@ class CLILogger(private val isError: Boolean,
     }
 
     /**
-     *
+     * print a log
      */
     override fun info(msg: String) {
         if (isInfo) {
@@ -70,7 +79,7 @@ class CLILogger(private val isError: Boolean,
     }
 
     /**
-     *
+     * print a log
      */
     override fun debug(msg: String) {
         if (isDebug) {
@@ -85,9 +94,9 @@ class CLILogger(private val isError: Boolean,
             }
         }
     }
-    
+
     /**
-     *
+     * print a log
      */
     override fun warning(msg: String) {
         if (isWarning) {
