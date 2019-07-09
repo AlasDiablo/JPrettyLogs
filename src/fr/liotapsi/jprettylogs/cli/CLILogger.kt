@@ -28,7 +28,7 @@ class CLILogger(private val isError: Boolean,
 
     init {
         if (path != null)
-            this.loggerFileOut = LoggerFileOut("$path${logName}_${this.date.toString()}.log".replace(" ", "_").replace(":", "_"), true)
+            this.loggerFileOut = LoggerFileOut(path + "${logName}_${this.date}.log".replace(" ", "_").replace(":", "_"), true)
         else
             loggerFileOut = LoggerFileOut(null, false)
     }
