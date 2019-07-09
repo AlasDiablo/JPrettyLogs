@@ -2,6 +2,7 @@ package fr.liotapsi.jprettylogs.cli
 
 import fr.liotapsi.jprettylogs.ILogger
 import fr.liotapsi.jprettylogs.io.LoggerFileOut
+import java.util.*
 
 /**
  * the main class for call and build the logger
@@ -14,6 +15,12 @@ class CLILogger(private val isError: Boolean,
                 path: String?,
                 logName: String?) : ILogger {
 
+
+    /**
+     * the day for the execution
+     */
+    private val date = Date()
+
     /**
      * the file stream output
      */
@@ -21,7 +28,7 @@ class CLILogger(private val isError: Boolean,
 
     init {
         if (path != null)
-            this.loggerFileOut = LoggerFileOut("$path${logName}_this.date.toString().log".replace(" ", "_"), true)
+            this.loggerFileOut = LoggerFileOut("$path${logName}_${this.date.toString()}.log".replace(" ", "_"), true)
         else
             loggerFileOut = LoggerFileOut(null, false)
     }
