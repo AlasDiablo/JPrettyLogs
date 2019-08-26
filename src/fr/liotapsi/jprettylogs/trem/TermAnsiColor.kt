@@ -1,9 +1,9 @@
-package fr.liotapsi.jprettylogs.cli
+package fr.liotapsi.jprettylogs.trem
 
 /**
  * list of some color
  */
-object CLIAnsiColor {
+object TermAnsiColor {
     val ANSI_RESET = "\u001B[0m"
     val ANSI_BLACK = "\u001B[30m"
     val ANSI_RED = "\u001B[31m"
