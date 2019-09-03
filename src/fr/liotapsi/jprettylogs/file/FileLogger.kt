@@ -32,10 +32,10 @@ class FileLogger(
     override fun error(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    [!]    | ${tmp[0]}"
-        this.writer.write(str1)
+        this.writer.write("$str1\n")
         for (i in 1 until tmp.size step 1) {
             val str2 = "           | ${tmp[i]}"
-            this.writer.write(str2)
+            this.writer.write("$str2\n")
         }
         this.writer.flush()
     }
@@ -43,10 +43,10 @@ class FileLogger(
     override fun info(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    [i]    | ${tmp[0]}"
-        this.writer.write(str1)
+        this.writer.write("$str1\n")
         for (i in 1 until tmp.size step 1) {
             val str2 = "           | ${tmp[i]}"
-            this.writer.write(str2)
+            this.writer.write("$str2\n")
         }
         this.writer.flush()
     }
@@ -54,10 +54,10 @@ class FileLogger(
     override fun debug(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    ...    | ${tmp[0]}"
-        this.writer.write(str1)
+        this.writer.write("$str1\n")
         for (i in 1 until tmp.size step 1) {
             val str2 = "           | ${tmp[i]}"
-            this.writer.write(str2)
+            this.writer.write("$str2\n")
         }
         this.writer.flush()
     }
@@ -65,10 +65,10 @@ class FileLogger(
     override fun warning(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    /!\\    | ${tmp[0]}"
-        this.writer.write(str1)
+        this.writer.write("$str1\n")
         for (i in 1 until tmp.size step 1) {
             val str2 = "           | ${tmp[i]}"
-            this.writer.write(str2)
+            this.writer.write("$str2\n")
         }
         this.writer.flush()
     }
@@ -76,10 +76,10 @@ class FileLogger(
     override fun critical(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    !!!    | ${tmp[0]}"
-        this.writer.write(str1)
+        this.writer.write("$str1\n")
         for (i in 1 until tmp.size step 1) {
             val str2 = "           | ${tmp[i]}"
-            this.writer.write(str2)
+            this.writer.write("$str2\n")
         }
         this.writer.flush()
     }
