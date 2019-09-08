@@ -7,9 +7,8 @@ import javax.swing.JFrame
 import javax.swing.JScrollPane
 import javax.swing.JTextArea
 
-
-
 class GuiLogger : ILogger {
+
     override fun error(msg: String) {
         val tmp = msg.split("\n")
         val str1 = "    [!]    | ${tmp[0]}"
@@ -75,17 +74,36 @@ class GuiLogger : ILogger {
         frame.isVisible = true
     }
 
+    /**
+     * set the type of close option
+     */
     fun defaultCloseOperation(type: Int): GuiLogger {
         this.frame.defaultCloseOperation = type
         return this
     }
 
+    /**
+     * close the logger windows
+     */
     fun closeGui() {
         this.frame.dispose()
     }
-    
+
+    /**
+     * set the icon of the logger windows
+     * @param icon
+     */
     fun setIcon(image: Image): GuiLogger {
         this.frame.iconImage = image
+        return this
+    }
+
+    /**
+     * set the title of the logger windows
+     * @param title
+     */
+    fun setTitle(title: String): GuiLogger {
+        this.frame.title = title
         return this
     }
 }
