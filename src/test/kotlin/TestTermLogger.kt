@@ -1,7 +1,7 @@
-import fr.liotapsi.jprettylogs.file.FileLogger
+import fr.liotapsi.jprettylogs.impl.AnsiLogger
 
 fun main() {
-    val logger = FileLogger("/tmp/", "testlogger")
+    val logger = AnsiLogger(info = true, debug = true, warning = true)
     logger.critical("This is a critical log.\nOn multi line")
     logger.debug("This is a debug log.\nOn multi line")
     logger.error("This is a error log.\nOn multi line")
