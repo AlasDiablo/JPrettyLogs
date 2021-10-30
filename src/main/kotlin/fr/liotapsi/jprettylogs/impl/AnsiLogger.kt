@@ -16,7 +16,7 @@ import java.io.PrintStream
  * @param warning enable or not warning output
  */
 class AnsiLogger(
-    printStream: PrintStream,
+    printStream: PrintStream = System.out,
     private val critical: Boolean = true,
     private val error: Boolean = true,
     private val info: Boolean = false,

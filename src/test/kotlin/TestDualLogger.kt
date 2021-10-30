@@ -3,7 +3,7 @@ import fr.liotapsi.jprettylogs.impl.AnsiLogger
 import fr.liotapsi.jprettylogs.ui.GuiLogger
 
 fun main() {
-    val log1 = AnsiLogger(System.out, info = true, debug = true, warning = true)
+    val log1 = AnsiLogger(info = true, debug = true, warning = true)
     val log2 = GuiLogger().defaultCloseOperation(3)
     val logger = DualLogger(log1, log2)
     logger.critical("This is a critical log.\nOn multi line")
