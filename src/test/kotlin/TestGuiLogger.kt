@@ -1,7 +1,7 @@
-import fr.liotapsi.jprettylogs.ui.GuiLogger
+import fr.liotapsi.jprettylogs.impl.GuiLogger
 
 fun main() {
-    val logger = GuiLogger()
+    val logger = GuiLogger(info = true, debug = true, warning = true)
     logger.critical("This is a critical log.\nOn multi line")
     logger.debug("This is a debug log.\nOn multi line")
     logger.error("This is a error log.\nOn multi line")
